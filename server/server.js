@@ -1,16 +1,16 @@
 const app = require('./server-config.js');
-const routes = require('./server-routes.js');
+const todo = require('./routes/todo-routes.js');
 
 const port = process.env.PORT || 5000;
 
-app.get('/', routes.getAllTodos);
-app.get('/:id', routes.getTodo);
+app.get('/todo', todo.getAllTodos);
+app.get('/todo/:id', todo.getTodo);
 
-app.post('/', routes.postTodo);
-app.patch('/:id', routes.patchTodo);
+app.post('/todo', todo.postTodo);
+app.patch('/todo/:id', todo.patchTodo);
 
-app.delete('/', routes.deleteAllTodos);
-app.delete('/:id', routes.deleteTodo);
+app.delete('/todo', todo.deleteAllTodos);
+app.delete('/todo/:id', todo.deleteTodo);
 
 if (process.env.NODE_ENV !== 'test') {
   app.listen(port, () => console.log(`Listening on port ${port}`));
