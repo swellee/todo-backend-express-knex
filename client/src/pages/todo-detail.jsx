@@ -16,6 +16,7 @@ function TodoDetail() {
     async () => {
       const res = await fetchData(`/todo/${id}`);
       setTitle(res.title);
+      setContent(res.content);
       return res;
     },
     { ready: !!id }
