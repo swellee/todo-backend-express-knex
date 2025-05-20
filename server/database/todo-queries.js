@@ -1,7 +1,7 @@
 const knex = require("./connection.js");
 
-async function all() {
-    return knex('todos');
+async function all(query = {}) {
+    return knex('todos').where(query).orderBy('order');
 }
 
 async function get(id) {
