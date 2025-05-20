@@ -1,0 +1,26 @@
+.signup-page form{
+    width: 460px;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 4px 4px 16px rgba(71, 70, 70, 0.3);
+    margin: 200px auto;
+    padding: 32px;
+}
+.signup-page form label{
+    display: block;
+    padding: 16px;
+    margin-top: 12px;
+}
+.signup-page form input{
+    height: 26px;
+    width: 100%;
+}
+.signup-page form .btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    .btn{
+        width: 200px;
+    }
+}

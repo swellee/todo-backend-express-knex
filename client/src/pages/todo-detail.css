@@ -1,0 +1,21 @@
+.todo-detail {
+  padding: 32px;
+  margin-bottom: 10px;
+  .title,.content{
+    display: block;
+    margin-bottom: 4px;
+  }
+  input,textarea{
+    width: 70%;
+    min-width: 70%;
+    max-width: 70%;
+    margin-bottom: 10px;
+  }
+  .actions{
+    margin-top: 20px;
+    button{
+      margin-right: 10px;
+      height: 26px;
+    }
+  }
+}
