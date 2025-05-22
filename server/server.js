@@ -20,9 +20,9 @@ app.delete('/todo', todo.deleteAllTodos);
 app.delete('/todo/:id', todo.deleteTodo);
 
 // user routes
-app.post('/signup', user.signup)
-app.post('/login', user.login)
-app.get('/me', user.info)
+app.post('/user/signup', user.signup)
+app.post('/user/login', user.login)
+app.get('/user/me', user.info)
 
 if (process.env.NODE_ENV !== 'test') {
   app.listen(port, () => console.log(`Listening on port ${port}`));

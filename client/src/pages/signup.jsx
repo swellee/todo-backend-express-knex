@@ -7,7 +7,7 @@ import { Link } from "react-router";
 export const SignUp = () => {
   const { runAsync: submitSignup } = useRequest(
     async (username, password) => {
-      const res = await fetchData("/signup", {
+      const res = await fetchData("/user/signup", {
         method: "POST",
         data: {
           username,

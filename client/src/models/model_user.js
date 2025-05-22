@@ -7,7 +7,7 @@ export const model_user ={
 export const action_user_get = async() => {
     const token = getToken();
     if(token){
-        const res = await fetchData('/me');
+        const res = await fetchData('/user/me');
         if(res?.token){
             setToken(res.token);
             return res.user;

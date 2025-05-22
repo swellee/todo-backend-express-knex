@@ -12,7 +12,7 @@ export const Login = () => {
   const navigate = useNavigate();
   const { runAsync: submitLogin } = useRequest(
     async (username, password) => {
-      const res = await fetchData("/login", {
+      const res = await fetchData("/user/login", {
         method: "POST",
         data: {
           username,
