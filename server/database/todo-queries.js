@@ -4,6 +4,16 @@ async function all(query = {}) {
     return knex('todos').where(query).orderBy('order');
 }
 
+async function getOrgTodos(orgId, limit=9999, offset=0) {
+    return knex('todos')
+    .join('categories', 'todos.category_id', 'categories.id')
+    .where({ org_id: orgId })
+    .select('todos.*', 'categories.name as category_name')
+    .orderBy('order')
+    .limit(limit)
+    .offset(offset);
+}
+
 async function get(id) {
     const results = await knex('todos').where({ id });
     return results[0];
@@ -35,5 +45,6 @@ module.exports = {
     create,
     update,
     delete: del,
+    getOrgTodos,
     clear
 }

@@ -1,19 +1,12 @@
 const _ = require("lodash");
 const todos = require("../database/todo-queries.js");
 const { addErrorReporting } = require("../utils.js");
-function createToDo(req, data) {
 
-  return {
-    title: data.title,
-    order: data.order,
-    completed: data.completed || false,
-    id: data.id
-  };
-}
-
-async function getAllTodos(req, res) {
-  const allEntries = await todos.all({user_id: req.user.id});
-  return res.send(allEntries.map(_.curry(createToDo)(req)));
+async function getOrgTodos(req, res) {
+  const orgId = req.params.orgId;
+  const { limit, offset } = req.query;
+  const items = await todos.getOrgTodos(orgId, limit, offset);
+  return res.send(items);
 }
 
 async function getTodo(req, res) {
@@ -42,8 +35,8 @@ async function deleteTodo(req, res) {
 }
 
 const toExport = {
-  getAllTodos: {
-    method: getAllTodos,
+  getOrgTodos: {
+    method: getOrgTodos,
     errorMessage: "Could not fetch all todos",
   },
   getTodo: { method: getTodo, errorMessage: "Could not fetch todo" },
