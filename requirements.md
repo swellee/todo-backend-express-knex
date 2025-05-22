@@ -53,8 +53,8 @@
     - todo_id
 
 5.operations after polish
-  - within onboarding flow, user create or pick category
-    - relevant apis: create category, list all categories, update user
+  - within onboarding flow, user create or pick organization
+    - relevant apis: create organization, list all organiztions, add user to organization
   - after login, dashboard menu should include todos(default page),organizations, and a header dropdown filter to pick
   current organization
     - on todos page, render all the todos group by category of current organization.
